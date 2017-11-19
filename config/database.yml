@@ -24,7 +24,8 @@ default: &default
 development:
   <<: *default
   database: schwartz-lab_development
-
+  username: schwartzlab
+  password:
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -58,7 +59,8 @@ development:
 test:
   <<: *default
   database: schwartz-lab_test
-
+  username: schwartzlab
+  password:
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -81,5 +83,7 @@ test:
 production:
   <<: *default
   database: schwartz-lab_production
-  username: schwartz-lab
-  password: <%= ENV['SCHWARTZ-LAB_DATABASE_PASSWORD'] %>
+  username: schwartzlab
+  #password: <%= ENV['SCHWARTZ-LAB_DATABASE_PASSWORD'] %>
+  #password: ""
+  password:
